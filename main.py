@@ -43,6 +43,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/")
+def read_root():
+    return {"message": "Backend is live!"}
 
 from sqlalchemy import select, exists
 @app.post('/submit_text')
